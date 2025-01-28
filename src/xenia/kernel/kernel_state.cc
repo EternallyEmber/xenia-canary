@@ -710,7 +710,7 @@ void KernelState::UnloadUserModule(const object_ref<UserModule>& module,
                              return e->path() == module->path();
                            }) == user_modules_.end());
 
-  object_table()->ReleaseHandleInLock(module->handle());
+  object_table()->ReleaseHandle(module->handle());
 }
 
 void KernelState::TerminateTitle() {
